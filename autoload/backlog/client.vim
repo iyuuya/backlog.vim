@@ -1,6 +1,6 @@
 scriptencoding utf-8
-let s:save_cpo = &cpo
-set cpo&vim
+let s:save_cpo = &cpotions
+set cpotions&vim
 
 let s:V = vital#of('backlog')
 let s:HTTP = s:V.import('Web.HTTP')
@@ -18,5 +18,5 @@ function! s:request_path(path)
   return s:host() . '/api/v2/' . s:HTTP.encodeURI(a:path) . '?apiKey=' . g:backlog_api_key
 endfunction
 
-let &cpo = s:save_cpo
+let &cpotions = s:save_cpo
 unlet s:save_cpo
